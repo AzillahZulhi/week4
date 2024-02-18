@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPP0</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #cecece;
+            text-align: center;
+        }
+
+        .navbar {
+            margin-bottom: 10px;
+            z-index: 1;
+        }
+
+        .content {
+            display: none;
+            position: relative;
+        }
+        .container{
+            padding: 20px;
+        }
+        @media (min-width: 500px) {
+            .content {
+                padding-top: 56px;
+            }
+        }
+        .card {
+            background-color: #cecece;
+            transition: background-color 0.3s ease;
+        }
+        .card:hover {
+            background-color: #fff;
+        }
+        .footer {
+            margin-top: 0px;
+            z-index: 1;
+        }
+        .hero-section {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            z-index: 1;
+        }   
+        .hero-section h1,
+        .hero-section p {
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <section>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <div class="container">
+                <a class="navbar-brand font-weight-bold mr-auto" href="#" onclick="showContent('home')">JBN</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="showContent('home')">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="showContent('products')">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="showContent('cart')">Cart</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="showContent('gallery')">Branch</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="showContent('register')">Log in</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="showContent('aboutUs')">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="showContent('contactUs')">Contact us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+        
+    <!-- body -->
+    <section>        
+        <div id="home-content" class="content" style="position: relative;">
+            <img src="pp/homeBg.jpg" class="img-fluid mb-5" alt="Background Image">
+            <div class="hero-section">
+                <h1 class="font-weight-bold">Welcome to JBN!</h1>
+                <p class="font-weight-bold">Where you can listen to music with a different experience, are you interested?</p>
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-light" onclick="showContent('products')">Shop Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="products-content" class="content">
+            <h3 class="font-weight-bold mb-2">New products</h3>
+            <div class="container mb-5">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="pp/productImg/004.webp" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title" class="font-weight-bold">JBN-004</h5>
+                                <p class="card-text" class="font-weight-bold">Product Description</p>
+                                <p class="card-text" class="font-weight-bold">Rp.280000</p>
+                                <button type="button" class="btn btn-dark" onclick="checkout()">Buy</button>
+                                <button type="button" class="btn btn-dark" onclick="addToCart('JBN-004', 'Product Description', 280000, 'pp/productImg/004.webp')">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="pp/productImg/005.webp" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title" class="font-weight-bold">JBN-005</h5>
+                                <p class="card-text" class="font-weight-bold">Product Description</p>
+                                <p class="card-text" class="font-weight-bold">Rp.520000</p>
+                                <button type="button" class="btn btn-dark" onclick="checkout()">Buy</button>
+                                <button type="button" class="btn btn-dark" onclick="addToCart('JBN-005', 'Product Description', 520000, 'pp/productImg/005.webp')">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="pp/productImg/006.webp" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title" class="font-weight-bold">JBN-006</h5>
+                                <p class="card-text" class="font-weight-bold">Product Description</p>
+                                <p class="card-text" class="font-weight-bold">Rp.350000</p>
+                                <button type="button" class="btn btn-dark" onclick="checkout()">Buy</button>
+                                <button type="button" class="btn btn-dark" onclick="addToCart('JBN-006', 'Product Description', 350000, 'pp/productImg/006.webp')">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="font-weight-bold mb-2">Popular Products</h3>
+            <div class="container mb-5">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="pp/productImg/001.webp" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title" class="font-weight-bold">JBN-001</h5>
+                                <p class="card-text" class="font-weight-bold">Product Description</p>
+                                <p class="card-text" class="font-weight-bold">Rp.450000</p>
+                                <button type="button" class="btn btn-dark" onclick="checkout()">Buy</button>
+                                <button type="button" class="btn btn-dark" onclick="addToCart('JBN-001', 'Product Description', 450000, 'pp/productImg/001.webp')">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="pp/productImg/002.webp" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title" class="font-weight-bold">JBN-002</h5>
+                                <p class="card-text" class="font-weight-bold">Product Description</p>
+                                <p class="card-text" class="font-weight-bold">Rp.300000</p>
+                                <button type="button" class="btn btn-dark" onclick="checkout()">Buy</button>
+                                <button type="button" class="btn btn-dark" onclick="addToCart('JBN-002', 'Product Description', 300000, 'pp/productImg/002.webp')">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="pp/productImg/003.webp" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title" class="font-weight-bold">JBN-003</h5>
+                                <p class="card-text" class="font-weight-bold">Product Description</p>
+                                <p class="card-text" class="font-weight-bold">Rp.500000</p>
+                                <button type="button" class="btn btn-dark" onclick="checkout()">Buy</button>
+                                <button type="button" class="btn btn-dark" onclick="addToCart('JBN-003', 'Product Description', 500000, 'pp/productImg/003.webp')">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cart-content" class="content">
+            <h3 class="font-weight-bold">Shopping Cart</h3>
+            <div id="cart-items"></div>
+            <div id="cart-summary"></div>
+            <button type="button" class="btn btn-success mt-3" onclick="checkout()">Checkout</button>
+        </div>
+
+        <div id="checkout-content" class="content">
+            <h3 class="font-weight-bold">Checkout</h3>
+            <div id="checkout-items"></div>
+            <form action="process_checkout.php" method="POST">
+                <label for="address">Shipping Address:</label><br>
+                <textarea id="address" name="address" rows="4" required></textarea><br>
+                <label for="payment">Payment Information:</label><br>
+                <input type="text" id="payment" name="payment" required><br>
+                <button type="submit">Checkout</button>
+            </form>
+        </div>
+
+        <div id="gallery-content" class="content">
+            <h1 class="font-weight-bold">Our branches</h1>
+            <p class="font-weight-bold">Explore our branches here</p>
+            <div class="container mb-5">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card" onclick="showImages('Yogyakarta')">
+                            <img src="pp/galleryImg/p1.webp" class="card-img-top" alt="gallery Image">
+                            <div class="card-body">
+                                <h5 class="card-title" class="font-weight-bold">Yogyakarta</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" onclick="showImages('Bandung')">
+                            <img src="pp/galleryImg/p2.webp" class="card-img-top" alt="gallery Image">
+                            <div class="card-body">
+                                <h5 class="card-title" class="font-weight-bold">Bandung</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" onclick="showImages('Jakarta')">
+                            <img src="pp/galleryImg/p3.webp" class="card-img-top" alt="gallery Image">
+                            <div class="card-body">
+                                <h5 class="card-title" class="font-weight-bold">Jakarta</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-5" id="image-display-area">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <img id="displayed-image" class="img-fluid" src="" alt="Displayed Image">
+                </div>
+            </div>  
+        </div>
+        </div>
+        
+        <div id="register-content" class="content">
+            <div>
+                <div class="cardLogin" id="cardLogin">
+                    <div class="card-body">
+                        <form id="loginForm">
+                            <h1 class="card-title">Login</h1>
+                            <div class="form-group">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="button" class="btn btn-secondary" onclick="showRegistForm()">Don't have an account yet? join us</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="cardRegist" id="cardRegist" style="display: none;">
+                <div class="card-body">
+                    <form id="registerForm" action="register.php" method="post">
+                        <h1 class="card-title">Join us</h1>
+                        <div class="form-group">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
+                        <button type="button" class="btn btn-secondary" onclick="showLoginForm()">Already have an account?</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div id="aboutUs-content" class="content" style="position: relative;">
+            <img src="pp/aboutUsBg.jpg" class="img-fluid mb-5" alt="Background Image">
+            <div class="hero-section">
+                <div class="row">
+                    <div class="col">
+                        <div class="font-weight-bold text-white">
+                            <h3>What is JBN?</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam saepe accusamus, corrupti maiores, perferendis et asperiores incidunt quisquam velit commodi, nostrum animi aliquid repellat laborum consequatur itaque nesciunt provident consequuntur?</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="font-weight-bold text-white">
+                            <h3>Where does it come from?</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti voluptate deleniti, exercitationem fugit, quasi aperiam perspiciatis ex quos facere veniam molestiae mollitia ad consequuntur harum vero itaque dolores ipsa consectetur.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="font-weight-bold text-center text-white">
+                        <h3>Where can I get some?</h3>
+                        <div>
+                            <button type="button" class="btn btn-light" onclick="showContent('products')">You can buy it online</button>
+                            <button type="button" class="btn btn-light" onclick="showContent('gallery')">Or through our branches</button>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+
+        <div id="contactUs-content" class="content" style="position: relative;">
+            <img src="pp/contactUsBg.jpg" class="img-fluid mb-5" alt="Background Image">
+            <div class="hero-section">
+                <div class="row">
+                    <div class="col font-weight-bold text-white">
+                        <h1>Contact Us</h1>
+                        <form id="contactUsForm" action="process_contact_form.php" method="post">
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                        </form>
+                    </div>
+                    <div class="col font-weight-bold text-white">
+                        <h3>Our Locations</h3>
+                        <p><strong>Yogyakarta:</strong> +1234567890</p>
+                        <p><strong>Bandung:</strong> +0987654321</p>
+                        <p><strong>Jakarta:</strong> +324152543</p>
+                        <p>Email: <a href="mailto:info@jbn.com">info@jbn.com</a></p>
+                        <p>Address:<br> Jl. Jend Sudirman, No-123, Yogyakarta, Indonesia</p>
+                        <p>Business Hours: Mon-Fri 9:00 am - 5:00 pm</p>
+                    </div>
+                    <div class="font-weight-bold text-white">
+                        <h4>Do not hesitate to contact us. You can use the form above or contact us directly using the contact information provided above. Thank You</h4>
+                    </div>
+                </div>
+            </div>
+        </div>             
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5 footer">
+        <p>COPYRIGHT &copy; 2024 JBN Inc. All Rights Reserved. (kali)</p>
+    </footer>
+
+    <script>
+    // fungsi navigasi
+        function showContent(contentId) {
+            var contents = document.getElementsByClassName("content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            document.getElementById(contentId + "-content").style.display = "block";
+        }        
+        // Tampilkan konten Home secara default
+        showContent('home');
+
+    // fungsi galerry/branch        
+        var images = {
+            'Yogyakarta': ['pp/galleryImg/p11.jpg', 'pp/galleryImg/p12.jpg'],
+            'Bandung': ['pp/galleryImg/p21.jpg', 'pp/galleryImg/p22.jpg'],
+            'Jakarta': ['pp/galleryImg/p31.jpg', 'pp/galleryImg/p32.jpg']
+        };
+        function showImages(location) {
+            var imageList = images[location];
+            var imageDisplayArea = document.getElementById('image-display-area');
+            imageDisplayArea.innerHTML = '';
+
+            imageList.forEach(function(imageSrc) {
+                var imgElement = document.createElement('img');
+                imgElement.src = imageSrc;
+                imgElement.className = 'img-fluid mb-2';
+                imageDisplayArea.appendChild(imgElement);
+            });
+        }
+
+    // register/login fungsi
+        function showRegistForm() {
+            document.getElementById('cardRegist').style.display = 'block';
+            document.getElementById('cardLogin').style.display = 'none';
+        } // satu - satunya akses ke regist form dengan button secondary di login form
+
+        function showLoginForm() {
+            document.getElementById('cardRegist').style.display = 'none';
+            document.getElementById('cardLogin').style.display = 'block';
+        } // kembali ke login form jika sudah punya akun
+
+        function submitForm() {
+            var fullname = document.getElementById('fullname').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            fetch('register.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'fullname=' + encodeURIComponent(fullname) +
+                    '&email=' + encodeURIComponent(email) +
+                    '&password=' + encodeURIComponent(password),
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Registration successful!');
+                } else {
+                    throw new Error('Registration failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            submitForm();
+        });
+
+
+     // fungsi addToCart/checkout                
+        var cartItems = [];        
+        function addToCart(name, description, price, imagePath) {
+            var item = {
+                name: name,
+                description: description,
+                price: price,
+                imagePath: imagePath // Menambahkan imagePath ke objek item
+            };
+            cartItems.push(item); 
+            updateCartContent();
+            alert('Item has been added to cart!'); 
+        }
+        function updateCartContent() {
+            var cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = '';
+
+            if (cartItems.length === 0) {
+                cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+            } else {
+                cartItems.forEach(function(item, index) {
+                    var itemCard = document.createElement('div');
+                    itemCard.className = 'card mb-2';
+                    itemCard.innerHTML = `
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="${item.imagePath}" class="card-img" alt="Product Image">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">${item.name}</h5>
+                                    <p class="card-text">${item.description}</p>
+                                    <p class="card-text">Price: Rp.${item.price}</p>
+                                    <button type="button" class="btn btn-danger" onclick="removeFromCart(${index})">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(itemCard);
+                });
+            }
+            function updateCartSummary() { //fungsi ini untuk memperbarui ringkasan keranjang setelah konten keranjang diperbarui
+                var cartSummary = document.getElementById('cart-summary');
+                var total = 0;
+                cartItems.forEach(function(item) {
+                    total += item.price;
+                });
+                cartSummary.innerHTML = `<p>Total Price: Rp.${total}</p>`;
+            }
+        }
+        function removeFromCart(index) { //fitur remove product yang ada di cart
+            cartItems.splice(index, 1);
+            updateCartContent();
+        }
+        var loggedIn = false; // Mendefinisikan variabel loggedIn
+        function checkout() {
+            if (!loggedIn) {
+                alert('You need to login or register first before proceeding to checkout.');
+                showContent('register');// Jika pengguna belum login
+            } else {
+                showContent('checkout');
+                var checkoutItemsContainer = document.getElementById('checkout-items');
+                checkoutItemsContainer.innerHTML = '';
+
+                cartItems.forEach(function(item) {
+                    var itemElement = document.createElement('div');
+                    itemElement.innerHTML = `
+                        <p>${item.name}</p>
+                        <img src="${item.imagePath}" alt="Product Image" style="width: 100px;">
+                    `;
+                    checkoutItemsContainer.appendChild(itemElement);
+                });
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
